@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://byovm3m77hqw4"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_pq8dm"]
+[ext_resource type="Texture2D" uid="uid://dwywxy5wfp5bh" path="res://sprites/pongPaddle.png" id="2_yngcj"]
+[ext_resource type="Texture2D" uid="uid://bnrspoonk1v5i" path="res://sprites/pongPaddle_normalMap.png" id="3_dwq8o"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kk8wh"]
+diffuse_texture = ExtResource("2_yngcj")
+normal_texture = ExtResource("3_dwq8o")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhwud"]
+size = Vector2(6, 32)
+
+[node name="playerPaddle" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_pq8dm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_kk8wh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rhwud")
