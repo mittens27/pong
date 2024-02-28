@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://q83md3g0ir5p"]
+
+[ext_resource type="Script" path="res://ball.gd" id="1_pasr3"]
+[ext_resource type="Texture2D" uid="uid://r8a8ec6fpfi5" path="res://sprites/pongBall.png" id="1_yeq4a"]
+[ext_resource type="Texture2D" uid="uid://7apgwk35fgbh" path="res://effects/texture_light1.png" id="3_1wmdf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_umnrv"]
+diffuse_texture = ExtResource("1_yeq4a")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4omtn"]
+size = Vector2(6, 6)
+
+[node name="ball" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_pasr3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_umnrv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4omtn")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.25, 0.25)
+energy = 0.5
+range_layer_min = -1
+range_layer_max = 1
+shadow_enabled = true
+texture = ExtResource("3_1wmdf")
+texture_scale = 10.14
