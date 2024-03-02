@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmb7w6hq31hin"
-path="res://.godot/imported/pixelLight_texture.png-fa215d3c55b712b243aac204082fcb9e.ctex"
+uid="uid://d2le4gn1utdy8"
+path="res://.godot/imported/texture_lightPixelated-export.png-45ae52a9b2ad5c9632199a0527a0ead1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://effects/pixelLight_texture.png"
-dest_files=["res://.godot/imported/pixelLight_texture.png-fa215d3c55b712b243aac204082fcb9e.ctex"]
+source_file="res://effects/texture_lightPixelated-export.png"
+dest_files=["res://.godot/imported/texture_lightPixelated-export.png-45ae52a9b2ad5c9632199a0527a0ead1.ctex"]
 
 [params]
 

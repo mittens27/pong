@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://byovm3m77hqw4"]
+[gd_scene load_steps=8 format=3 uid="uid://byovm3m77hqw4"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_pq8dm"]
 [ext_resource type="Texture2D" uid="uid://dwywxy5wfp5bh" path="res://sprites/pongPaddle.png" id="2_yngcj"]
@@ -15,6 +15,9 @@ normal_texture = ExtResource("3_dwq8o")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhwud"]
 size = Vector2(6, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0waa"]
+size = Vector2(7, 34)
+
 [node name="playerPaddle" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_pq8dm")
@@ -27,3 +30,9 @@ texture = SubResource("CanvasTexture_kk8wh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rhwud")
+
+[node name="signalBox" type="Area2D" parent="." groups=["paddle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="signalBox"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_e0waa")

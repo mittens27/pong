@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://q83md3g0ir5p"]
+[gd_scene load_steps=6 format=3 uid="uid://q83md3g0ir5p"]
 
 [ext_resource type="Script" path="res://ball.gd" id="1_pasr3"]
 [ext_resource type="Texture2D" uid="uid://r8a8ec6fpfi5" path="res://sprites/pongBall.png" id="1_yeq4a"]
@@ -10,9 +10,6 @@ diffuse_texture = ExtResource("1_yeq4a")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4omtn"]
 size = Vector2(6, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_47m1i"]
-size = Vector2(6, 6)
-
 [node name="ball" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -21,14 +18,10 @@ script = ExtResource("1_pasr3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_umnrv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4omtn")
-
 [node name="Area2D" type="Area2D" parent="." groups=["ball"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_47m1i")
-debug_color = Color(0.603922, 0.537255, 0.203922, 0.419608)
+shape = SubResource("RectangleShape2D_4omtn")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.25, 0.25)

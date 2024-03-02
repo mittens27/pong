@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://uh6pa8wjrfgh"]
+[gd_scene load_steps=17 format=3 uid="uid://uh6pa8wjrfgh"]
 
 [ext_resource type="Texture2D" uid="uid://ec1tcb78viaf" path="res://sprites/pongWall_h.png" id="1_6tu0r"]
 [ext_resource type="Texture2D" uid="uid://dsrkh44xv3yet" path="res://sprites/pongWall_h__upper_normalMap.png" id="2_v6oj4"]
@@ -28,12 +28,18 @@ normal_texture = ExtResource("5_7q4ix")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okisj"]
 size = Vector2(6, 228)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq21c"]
+size = Vector2(7, 228)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_hagni"]
 diffuse_texture = ExtResource("4_hx2su")
 normal_texture = ExtResource("6_d013f")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7jcw"]
 size = Vector2(6, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq1n3"]
+size = Vector2(7, 228)
 
 [node name="walls" type="StaticBody2D"]
 position = Vector2(160, 3)
@@ -43,14 +49,14 @@ collision_mask = 7
 [node name="upperWall" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_1q86j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="upperWall-collisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_phban")
 
 [node name="lowerWall" type="Sprite2D" parent="."]
 position = Vector2(0, 234)
 texture = SubResource("CanvasTexture_m7cbu")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="lowerWall-collisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 234)
 shape = SubResource("RectangleShape2D_mowwj")
 
@@ -59,15 +65,27 @@ position = Vector2(-157, 117)
 scale = Vector2(0.975, 0.95)
 texture = SubResource("CanvasTexture_3vgn0")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+[node name="lefWall-collisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(-157, 117)
 shape = SubResource("RectangleShape2D_okisj")
+
+[node name="leftWall-signalBox" type="Area2D" parent="." groups=["playerWall"]]
+
+[node name="leftWall- signalCollision" type="CollisionShape2D" parent="leftWall-signalBox"]
+position = Vector2(-156.5, 117)
+shape = SubResource("RectangleShape2D_xq21c")
 
 [node name="rightWall" type="Sprite2D" parent="."]
 position = Vector2(157, 117)
 scale = Vector2(0.975, 0.95)
 texture = SubResource("CanvasTexture_hagni")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+[node name="rightWall-collisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(157, 117)
 shape = SubResource("RectangleShape2D_c7jcw")
+
+[node name="rightWall-signalBox" type="Area2D" parent="." groups=["enemyWall"]]
+
+[node name="rightWall-signalCollision" type="CollisionShape2D" parent="rightWall-signalBox"]
+position = Vector2(156.5, 117)
+shape = SubResource("RectangleShape2D_oq1n3")

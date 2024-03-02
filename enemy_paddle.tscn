@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwxgmetlkub6f"]
+[gd_scene load_steps=8 format=3 uid="uid://cwxgmetlkub6f"]
 
 [ext_resource type="Texture2D" uid="uid://dwywxy5wfp5bh" path="res://sprites/pongPaddle.png" id="1_e0slq"]
 [ext_resource type="Script" path="res://enemy_paddle.gd" id="1_ygve3"]
@@ -15,6 +15,9 @@ size = Vector2(6, 32)
 cull_mode = 2
 polygon = PackedVector2Array(-3, -16, 3, -16, 3, 16, -3, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3d40"]
+size = Vector2(7, 34)
+
 [node name="enemy_paddle" type="CharacterBody2D"]
 collision_mask = 7
 script = ExtResource("1_ygve3")
@@ -27,3 +30,9 @@ shape = SubResource("RectangleShape2D_lkj2j")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_0jxp0")
+
+[node name="signalBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="signalBox"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_g3d40")
