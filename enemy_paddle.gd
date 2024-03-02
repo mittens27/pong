@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50.0
+const SPEED = 50
 
 @onready var ball = get_node("/root/world/ball")
 

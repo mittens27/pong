@@ -31,7 +31,7 @@ shape = SubResource("RectangleShape2D_lkj2j")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_0jxp0")
 
-[node name="signalBox" type="Area2D" parent="."]
+[node name="signalBox" type="Area2D" parent="." groups=["paddle"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="signalBox"]
 position = Vector2(-0.5, 0)
